@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Reccommender</title>
+    <link rel="stylesheet" href="{{url_for("static", filename="styles/styles.css")}}">
+</head>
+<body>
+    <div class="maincontainer">
+        <div class="searchcontainer">
+            <input id="searchbar" type="search" class="searchbar" placeholder="Search Anime">
+            <div class="filtercontainer">
+                <button id="filterbutton" class="filterbutton">filter</button>
+                <div class='filterbox' id='filterbox'>
+                    <div class='checkbox'>
+                        <input type="checkbox" id="tv" value="tv" name="filter">
+                        <label for="TV">TV</label><br>
+                    </div>
+                    <div class='checkbox'>
+                        <input type="checkbox" id="movie" value="movie" name="filter">
+                        <label for="movie">Movie</label><br>
+                    </div>
+                    <div class='checkbox'>
+                        <input type="checkbox" id="nsfw" value="nsfw" name="filter">
+                        <label for="nsfw">NSFW</label><br>
+                    </div>
+                </div>
+            </div>
+            <button id="suggestbutton" class="suggestbutton">suggest</button>
+            <button id="resetbutton" class="resetbutton">reset</button>
+        </div>
+        <div class="selectedcontainer">
+            <div id="selectedbox" class="selectedbox"></div>
+        </div>
+        <div  id="fuzzycontainer" class="fuzzycontainer">
+            <div id="fuzzybox" class="fuzzybox"></div>
+        </div>
+        <div class="recommendationcontainer">
+            <div id="recommendationbox" class="recommendationbox"></div>
+            <div id="recommendationdetailedbox" class="recommendationdetailedbox">
+                <div id="closebox" class="closebox">
+                    <button id="closebutton" class="closebutton">x</button>
+                </div>
+                <div id="imgbox" class="imgbox"></div>
+                <div id="synopsisbox" class="synopsisbox"></div>
+            </div>
+        </div>
+        <div class="paginationcontainer">
+            <div id="paginationbox" class="paginationbox"></div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>

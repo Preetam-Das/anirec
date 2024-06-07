@@ -1,0 +1,313 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+
+    /* background-image: url("/static/images/anime.jpg"); */
+    background-color: #264653;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.maincontainer {
+    display: flex;
+    /* background-color: red; */
+    padding: 10px;
+    flex-direction: column;
+}
+
+.searchcontainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+    padding: 10px;
+    background-color: #F4A261;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    min-width: 400px;
+}
+
+.filtercontainer {
+    display: flex;
+    position: relative;
+}
+
+.filterbox {
+    background-color: #E76F51;
+    display: flex;
+    display: none;
+    /* width: 30px; */
+    /* height: 30px; */
+    position: absolute;
+    top: 150%;
+    left: -50%;
+    flex-direction: column;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.checkbox {
+    display: flex;
+    gap: 6px;
+    color: whitesmoke;
+    accent-color: #8AB17D;
+}
+
+/*.searchcontainer {
+    /* background-color: blue; 
+    display: inherit;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+}*/
+
+.fuzzycontainer {
+    padding: 6px;
+    margin-bottom: 6px;
+    background-color: #287271;
+    display:none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.fuzzyitem {
+    padding: 3px;
+    color: wheat;
+    border-radius: 4px;
+}
+
+.fuzzyitem:hover {
+    background-color: #F4A261;
+    color: black;
+}
+
+.selectedcontainer {
+    /*background-color: yellow;*/ 
+    display: inherit;
+    /* padding: 6px; */
+    margin-bottom: 6px;
+}
+
+.selectedbox {
+    display: inherit;
+    border-radius: 8px;
+    gap: 10px;
+}
+
+.selecteditem {
+    margin: 3px;
+    margin-right: 3px;
+    padding: 3px;
+    /*border: 1px solid black;*/
+    background-color: #8AB17D;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: black;
+    font-style: italic;
+}
+
+.selecteditem:hover {
+   text-decoration: line-through;
+    cursor: default;
+}
+
+.searchbar {
+    flex-grow: 1;
+    width: 200px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid black;
+}
+
+/*.searchbar {
+    flex-grow: 1;
+}*/
+
+.suggestbutton, .resetbutton {
+    padding: 8px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: black;
+    color: #f8f9fa;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 14px;
+}
+
+.fuzzybox {
+    flex-grow: 1;
+    /* height: 150px; */
+    color: #f8f9fa;
+}
+
+.recommendationcontainer {
+    padding: 6px;
+    display: flex;
+}
+
+.recommendationbox {
+/*     flex-grow: 1; */
+/*     flex-direction: row;
+    gap: 15px;
+    margin-left: 20px;
+} */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+/*     justify-content: space-evenly; */
+    gap: 20px;
+    justify-content: center;
+}
+
+.recommendationitem {
+    flex: 1 1 0px;
+    background-color: #E9C46A;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+    border: 1px solid black;
+}
+
+.recommendationdetailedbox {
+    display: none;
+    flex-direction: column;
+    background-color: #8AB17D;
+/*     width: 500%; */
+/*     width: 30%; */
+    flex: 1 0 30%;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    padding: 4px;
+    gap: 15px;
+    margin-left: 15px;
+    position: sticky;
+    align-self: flex-start;
+    height: auto;
+    top: 10px;
+    left: 0;    
+}
+
+.closebox {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.closebutton {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: black;
+}
+
+.imgbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.imgbox span {
+/*     transform: scale(1.2); */
+    text-decoration: underline;
+    align-self: center;
+}
+
+.synopsisbox {
+    margin: 20px;
+    margin-top: 0px;
+    height: 390px;
+    max-height: 330px;
+    overflow-y: scroll;
+}
+
+.recommendationitem:hover {
+    background-color: #8AB17D;
+/*     color: whitesmoke; */
+    transform: scale(1.1);
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.recommendationimgdiv {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+/*     border: 1px solid black; */
+    position: relative;
+    flex-grow: 1;
+    justify-content: center
+}
+
+.recommendationimgdiv img {
+    border: 1px solid black;
+}
+
+.recommendationimgoverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+.recommendationitem:hover .recommendationimgoverlay {
+    opacity: 1;
+}
+
+.recommendationitem:hover img {
+    border: none;
+}
+
+.recommendationname {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+img {
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+.paginationcontainer {
+    padding: 6px;
+    color: #E9C46A;
+}
+
+.paginationbox {
+    flex-grow: 1;
+    flex-direction: row;
+    margin-left: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.recommendationimgoverlay
